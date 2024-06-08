@@ -37,7 +37,7 @@ body
 .exercise-3,
 .exercise-4
 {
-
+  position: relative;
 }
 
 .exercise-1 div,
@@ -45,54 +45,71 @@ body
 .exercise-3 div,
 .exercise-4 div
 {
-
+  
 }
 
 /* Exercise 2 */
 
 .exercise-2
 {
-
+  top: 20px;
 }
 
 .exercise-2 .green,
 .exercise-2 .blue,
 .exercise-2 .yellow
 {
-
+  position: absolute;
+  left: 10px;
+  top: 10px;
 }
 
 /* Exercise 3 */
 
 .exercise-3
 {
-
+  top: 40px;
 }
 
+/* Adding relative to green will become the positioned ancestors
+   for blue and yellow below because they are absolute so. If we did not add
+   relative to this, blue and yellow will instead use the document body   */
 .exercise-3 .green
 {
-
+  position: relative;
 }
 
 .exercise-3 .blue,
 .exercise-3 .yellow
 {
-
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
 }
 
 /* Exercise 4 */
 
 .exercise-4
 {
-
+  top: 60px;
 }
 
+/* For some reason this is using the document body for some reason even though
+    exercise-4 is set as relative, why? find out why [x]. 
+    
+    The reason why: blue is nested inside
+    .green which has a default of position: static, because of this, .blue will use
+    the document body for position anchoring  */
 .exercise-4 .blue
 {
-
+  position: absolute;
+  right: 0;
 }
 
+
+/* This is using the blue above as the positioned ancestor */
 .exercise-4 .yellow
 {
-
+  position: absolute;
+  right: 0;
 }

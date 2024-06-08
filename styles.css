@@ -113,3 +113,10 @@ body
   position: absolute;
   right: 0;
 }
+
+a {
+  color: white;
+  position: fixed;
+  left: 50%;
+  bottom: 50px;
+}
